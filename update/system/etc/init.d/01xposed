@@ -1,0 +1,13 @@
+#!/system/bin/sh
+log -p i -t GravityMod2 "Checking for xposed framework...";
+if [ ! -d "/data/xposed" ]; then
+    log -p i -t GravityMod2 "Installing xposed framework...";
+    mkdir /data/xposed
+    chown system:system /data/xposed
+    chmod 755 /data/xposed
+    cp /system/etc/xposed/* /data/xposed/
+    chown system:system /data/xposed/*
+    chmod 644 /data/xposed/XposedBridge.jar
+    chmod 666 /data/xposed/modules.list
+    chmod 666 /data/xposed/modules.whitelist
+fi

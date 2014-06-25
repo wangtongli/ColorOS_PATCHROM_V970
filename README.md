@@ -1,0 +1,1 @@
+This is V970 ColorOS PATCHROM
